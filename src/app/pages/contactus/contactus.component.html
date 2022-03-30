@@ -1,0 +1,40 @@
+<div class="container" style="padding-top: 120px;">
+    <h3>Contactenos</h3>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore saepe quod debitis non sunt dolores. Dolore, possimus. Fugit cupiditate, quia consequuntur, itaque cum in ipsum rem quam quo, ut alias?
+    </p>
+    <div class="row">
+        <div class="col-6">
+            <form [formGroup]="contactusForm">
+                <div formGroupName="persona">
+                    <div class="form-group">
+                        <input type="text" formControlName="nombre" placeholder="Nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="apellido" placeholder="Apellido" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" formControlName="email" placeholder="Email: email@dominio.com" class="form-control">
+                </div>
+                <div  class="form-group">
+                    <textarea formControlName="mensaje" placeholder="Mensaje" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <button (click)="__onSubmit()" class="btn btn-primary">Enviar Datos</button>
+                </div>
+            </form>            
+            <!--<p>
+               Datos del formulario: {{contactusForm.value | json}} 
+            </p>-->
+        </div>
+        <div class="col-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249671.56374971772!2d-77.10297768359372!3d-12.104060999999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c96528ea4a55%3A0x85a66d70e40870dd!2sUPC%20-%20Campus%20San%20Miguel!5e0!3m2!1ses-419!2spe!4v1648086765705!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <br>
+            Telefono: ######
+            <br>
+            Dirección: ----------------------------
+        </div>
+    </div>
+</div>
