@@ -5,8 +5,10 @@ import { ApartmentNewComponent } from "./access/apartment/apartment-new/apartmen
 import { ProjectListComponent } from "./access/project/project-list/project-list.component";
 import { ProjectNewComponent } from "./access/project/project-new/project-new.component";
 import { AboutusComponent } from "./pages/aboutus/aboutus.component";
+import { ApartmentComponent } from "./pages/apartment/apartment.component";
 import { ContactusComponent } from "./pages/contactus/contactus.component";
 import { HomeComponent } from "./pages/home/home.component";
+import { ProjectComponent } from "./pages/project/project.component";
 import { TeamComponent } from "./pages/team/team.component";
 
 const routes: Routes = [
@@ -14,6 +16,8 @@ const routes: Routes = [
     {path: 'aboutus', component: AboutusComponent },
     {path: 'contactus', component: ContactusComponent },
     {path: 'team', component: TeamComponent },
+    {path: 'project/:id', component: ProjectComponent},
+    {path: 'apartment/:idproyecto/:id', component: ApartmentComponent},
     {path: '', redirectTo: 'home' , pathMatch: 'full' },
 
     {path: 'admin/project/new', component: ProjectNewComponent },
