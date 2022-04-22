@@ -1,17 +1,17 @@
-<header *ngIf="projects[0] != null" class="masthead" style="background-image: url('{{ projects[0].image }}');">
+<header *ngIf="projects != ''" class="masthead" style="background-image: url('{{ projects.images[0].ruta }}');">
     <div class="container">
         <div class="intro-text">
             <div class="intro-heading text-uppercase">
                 <span style="-webkit-text-stroke: 1px rgba(120,120,120,0.50);">
                     ProYECTO
                     <br>
-                    {{projects[0].name}}
+                    {{projects.nombre}}
                 </span>
             </div>
             <a class="btn btn-primary border-dark btn-xl text-uppercase js-scroll-trigger" role="button" href="#portfolio" style="background-color: rgb(255,165,85);border:none;">
                 PRECIO
                 <br>
-                {{projects[0].price}}                
+                US$ {{projects.precio}}                
             </a>
         </div>
     </div>
@@ -24,18 +24,18 @@
             </div>
         </div>
         <div class="row">
-            <div *ngFor="let a of apartments" class="col-sm-6 col-md-4 portfolio-item">
-                <a routerLink="/apartment/{{projects[0].id}}/{{a.id}}" class="portfolio-link" data-toggle="modal">
+            <div *ngFor="let a of projects.apartments" class="col-sm-6 col-md-4 portfolio-item">
+                <a routerLink="/apartment/{{projects.idproyecto}}/{{a.iddepartamento}}" class="portfolio-link" data-toggle="modal">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content">
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                        <img class="img-fluid" src="{{a.image[0].path}}"><a class="btn btn-primary border-dark text-uppercase" role="button" href="#portfolio" style="background-color: rgb(255,165,85);border: none;position: absolute;right: 5px;bottom: 5px;font-size: 12px;font-weight: bold;color: rgba(255,255,255,0.75);">Cotizar</a></a>
+                        <img class="img-fluid" src="{{a.images[0].ruta}}"><a class="btn btn-primary border-dark text-uppercase" role="button" href="#portfolio" style="background-color: rgb(255,165,85);border: none;position: absolute;right: 5px;bottom: 5px;font-size: 12px;font-weight: bold;color: rgba(255,255,255,0.75);">Cotizar</a></a>
                 <div class="portfolio-caption">
-                    <h4>{{a.name}}</h4>
-                    <p class="text-muted"><strong><em>{{a.size}} - {{a.floor}}</em><br></strong></p>
-                    <p class="text-muted">{{a.type}}</p>
+                    <h4>{{a.nombre}}</h4>
+                    <p class="text-muted"><strong><em>{{a.precio}} - {{a.piso}}</em><br></strong></p>
+                    <p class="text-muted">{{a.ubicacion}}</p>
                 </div>    
             </div>
         </div>

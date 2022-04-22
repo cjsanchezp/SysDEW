@@ -10,11 +10,11 @@ import { ProjectService } from 'src/app/services/project.service';
 })
 export class ProjectComponent implements OnInit {
 
-  projects : any = [];
+  projects: any = [];
   apartments: any = []; //propiedad para almacenar los valores de apartamentos
 
   constructor(
-    private readonly ps:ProjectService,
+    private readonly ps: ProjectService,
     private readonly as: ApartmentService, //para conectar con servicio
     private ar: ActivatedRoute //para leer el parametro
   ) { }
@@ -30,14 +30,26 @@ export class ProjectComponent implements OnInit {
    this.as.__getApartments().subscribe((rest: any)=> {
      this.apartments = rest.data.filter((item: {projectId: number}) => item.projectId == idproyecto );
      console.log(this.apartments);
-   }) 
+   })  
   }
+
+  __obtener_proyecto(id: number){
+    const params = "?id=" + id;
+    this.ps.__be_obtener_proyecto(params).subscribe((rest: any) => {
+      this.projects = rest.data;
+      console.log(this.projects);
+    })
+  }
+
+
+
   //["id"] aqui ponemos el parametro que tenemos definido en el app-routong.module.ts
   ngOnInit(): void {
     this.ar.params.subscribe((p: Params) => {
       if(p["id"]) {
-        this.__ObtenerProyecto(p["id"]);
-        this.__ObtenerDepartamentos(p["id"]);
+        //this.__ObtenerProyecto(p["id"]);
+        //this.__ObtenerDepartamentos(p["id"]);
+        this.__obtener_proyecto(p["id"]);
       }
     })    
   }

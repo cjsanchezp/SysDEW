@@ -15,14 +15,22 @@ export class HomeComponent implements OnInit {
   ) { }
 
   __obtenerProyectos(){
-    this.ps.__getProjects().subscribe((rest:any) => {
+    this.ps.__getProjects().subscribe((rest: any) => {
+      this.projects = rest.data;
+      //console.log(this.projects);      
+    })
+  }
+
+  __listar_proyectos(){
+    this.ps.__be_listar_proyectos().subscribe((rest: any) => {
       this.projects = rest.data;
       console.log(this.projects);
     })
   }
 
   ngOnInit(): void {
-    this.__obtenerProyectos();
+    //this.__obtenerProyectos();
+    this.__listar_proyectos();
   }
-
+  
 }
