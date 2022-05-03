@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from 'src/app/services/project.service';
 
@@ -21,7 +22,19 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  __listar_proyectos(){
+  //__listar_proyectos(){
+    //const token = sessionStorage.getItem('token')
+   // const header = {Authorization: 'Bearer ' + token}
+
+   // console.log(header)
+
+    //this.ps.__be_listar_proyectos(header).subscribe((rest: any) => {
+      //this.projects = rest.data;
+      //console.log(this.projects);
+    //})
+  //}
+
+  __listar_proyectos(){    
     this.ps.__be_listar_proyectos().subscribe((rest: any) => {
       this.projects = rest.data;
       console.log(this.projects);

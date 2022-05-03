@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -15,6 +15,10 @@ export class ProjectService {
     return this.http.get('/api/project/getprojects');    
   }
 
+  //__be_listar_proyectos(headers:any){
+    //return this.http.get('https://localhost:44309/api/project/listar', { headers });
+  //}
+
   __be_listar_proyectos(){
     return this.http.get('https://localhost:44309/api/project/listar');
   }
@@ -23,7 +27,7 @@ export class ProjectService {
     return this.http.get('https://localhost:44309/api/project/obtener' + params);
   }
 
-  __be_insert(data: any){
-    return this.http.post<any>('https://localhost:44309/api/project/insert',data);
+  __be_insert(data: any, headers: any){
+    return this.http.post<any>('https://localhost:44309/api/project/insert',data, {headers});
   }
 }

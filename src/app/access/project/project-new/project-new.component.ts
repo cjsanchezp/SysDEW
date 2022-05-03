@@ -35,7 +35,10 @@ export class ProjectNewComponent implements OnInit {
   }
 
   __insert(data: any) {
-    this.ps.__be_insert(data).subscribe((rest: any) => {
+    const token = sessionStorage.getItem('token')
+    const header = {Authorization: 'Bearer ' + token}
+
+    this.ps.__be_insert(data,header).subscribe((rest: any) => {
       if(rest.issuccess){
         alert("Proyecto creado con ID: " + rest.data.id);
         this.router.navigate(['home']);

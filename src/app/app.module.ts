@@ -15,6 +15,8 @@ import { ApartmentNewComponent } from './access/apartment/apartment-new/apartmen
 import { ApartmentListComponent } from './access/apartment/apartment-list/apartment-list.component';
 import { ProjectComponent } from './pages/project/project.component';
 import { ApartmentComponent } from './pages/apartment/apartment.component';
+import { LoginComponent } from './access/login/login.component';
+import { UserNewComponent } from './access/user/user-new/user-new.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ApartmentComponent } from './pages/apartment/apartment.component';
     ApartmentNewComponent,
     ApartmentListComponent,
     ProjectComponent,
-    ApartmentComponent
+    ApartmentComponent,
+    LoginComponent,
+    UserNewComponent
   ],
   imports: [
     BrowserModule,
